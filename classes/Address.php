@@ -29,84 +29,188 @@
  *  PrestaShop is an internationally registered trademark & property of PrestaShop SA
  */
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Class AddressCore
  *
  * @since 1.0.0
+ *
+ * @ORM\Entity @Table(name="product")
  */
 class AddressCore extends ObjectModel
 {
     // @codingStandardsIgnoreStart
-    /** @var int Customer id which address belongs to */
+    /**
+     * @var int $id_address
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+    public $id_address;
+
+    /**
+     * @var int Customer ID to which the Address belongs
+     *
+     * @ORM\Column(type="integer")
+     */
     public $id_customer = null;
 
-    /** @var int Manufacturer id which address belongs to */
+    /**
+     * @var int Manufacturer id which address belongs to
+     *
+     * @ORM\Column(type="integer")
+     */
     public $id_manufacturer = null;
 
-    /** @var int Supplier id which address belongs to */
+    /**
+     * @var int Supplier id which address belongs to
+     *
+     * @ORM\Column(type="integer")
+     */
     public $id_supplier = null;
 
     /**
      * @since 1.5.0
+     *
      * @var int Warehouse id which address belongs to
+     *
+     * @ORM\Column(type="integer")
      */
     public $id_warehouse = null;
 
-    /** @var int Country id */
+    /**
+     * @var int Country id
+     *
+     * @ORM\Column(type="integer")
+     */
     public $id_country;
 
-    /** @var int State id */
+    /**
+     * @var int State id
+     *
+     * @ORM\Column(type="integer")
+     */
     public $id_state;
 
-    /** @var string Country name */
+    /**
+     * @var string Country name
+     *
+     * @ORM\Column(type="integer")
+     */
     public $country;
 
-    /** @var string Alias (eg. Home, Work...) */
+    /**
+     * @var string Alias (eg. Home, Work...)
+     *
+     * @ORM\Column(type="string")
+     */
     public $alias;
 
-    /** @var string Company (optional) */
+    /**
+     * @var string Company (optional)
+     *
+     * @ORM\Column(type="string")
+     */
     public $company;
 
-    /** @var string Lastname */
+    /**
+     * @var string Lastname
+     *
+     * @Column(type="string")
+     */
     public $lastname;
 
-    /** @var string Firstname */
+    /**
+     * @var string Firstname
+     *
+     * @ORM\Column(type="string")
+     */
     public $firstname;
 
-    /** @var string Address first line */
+    /**
+     * @var string Address first line
+     *
+     * @ORM\Column(type="string")
+     */
     public $address1;
 
-    /** @var string Address second line (optional) */
+    /**
+     * @var string Address second line (optional)
+     *
+     * @ORM\Column(type="string")
+     */
     public $address2;
 
-    /** @var string Postal code */
+    /**
+     * @var string Postal code
+     *
+     * @ORM\Column(type="string")
+     */
     public $postcode;
 
-    /** @var string City */
+    /**
+     * @var string City
+     *
+     * @ORM\Column(type="string")
+     */
     public $city;
 
-    /** @var string Any other useful information */
+    /**
+     * @var string Any other useful information
+     *
+     * @ORM\Column(type="string")
+     */
     public $other;
 
-    /** @var string Phone number */
+    /**
+     * @var string Phone number
+     *
+     * @ORM\Column(type="string")
+     */
     public $phone;
 
-    /** @var string Mobile phone number */
+    /**
+     * @var string Mobile phone number
+     *
+     * @ORM\Column(type="string")
+     */
     public $phone_mobile;
 
-    /** @var string VAT number */
+    /**
+     * @var string VAT number
+     *
+     * @ORM\Column(type="string")
+     */
     public $vat_number;
 
-    /** @var string DNI number */
+    /**
+     * @var string DNI number
+     *
+     * @ORM\Column(type="string")
+     */
     public $dni;
 
-    /** @var string Object creation date */
+    /**
+     * @var string Object creation date
+     *
+     * @ORM\Column(type="string")
+     */
     public $date_add;
 
-    /** @var string Object last modification date */
+    /**
+     * @var string Object last modification date
+     *
+     * @ORM\Column(type="string")
+     */
     public $date_upd;
 
-    /** @var bool True if address has been deleted (staying in database as deleted) */
+    /**
+     * @var bool True if address has been deleted (staying in database as deleted)
+     *
+     * @ORM\Column(type="bool")
+     */
     public $deleted = 0;
 
     protected static $_idZones = [];
