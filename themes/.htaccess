@@ -1,3 +1,4 @@
+# Block web access to smarty template files
 <FilesMatch "\.tpl$">
 Deny from all
 </FilesMatch>
